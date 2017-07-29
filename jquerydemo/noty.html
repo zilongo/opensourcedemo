@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="noty/lib/noty.css" rel="stylesheet" />
+    <script src="noty/lib/noty.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<script>
+    var n = new Noty({
+        text: 'Do you want to continue? <input id="example" type="text">',
+        buttons: [
+            Noty.button('YES', 'btn btn-success', function () {
+                console.log('button 1 clicked');
+            }, {id: 'button1', 'data-status': 'ok'}),
+
+            Noty.button('NO', 'btn btn-error', function () {
+                console.log('button 2 clicked');
+                n.close();
+            })
+        ]
+    }).show();
+
+</script>
+</body>
+</html>
